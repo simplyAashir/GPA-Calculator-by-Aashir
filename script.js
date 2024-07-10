@@ -12,7 +12,7 @@ function addSubject() {
 
     const gradeLabel = document.createElement('label');
     gradeLabel.setAttribute('for', 'grade' + subjectCount);
-    gradeLabel.textContent = 'Grade:';
+    gradeLabel.textContent = 'Grade';
     newSubject.appendChild(gradeLabel);
 
     const gradeSelect = document.createElement('select');
@@ -36,7 +36,7 @@ function addSubject() {
 
     const creditHoursLabel = document.createElement('label');
     creditHoursLabel.setAttribute('for', 'creditHours' + subjectCount);
-    creditHoursLabel.textContent = 'Credit Hours:';
+    creditHoursLabel.textContent = 'Credit Hours';
     newSubject.appendChild(creditHoursLabel);
 
     const creditHoursSelect = document.createElement('select');
@@ -75,6 +75,8 @@ function calculateGPA() {
     const cumulativeCreditHours = prevCreditHours + totalCreditHours;
     const cumulativeGPA = (prevCGPA * prevCreditHours + sgpa * totalCreditHours) / cumulativeCreditHours;
 
-    document.getElementById('result').innerHTML = `
-    SGPA: ${sgpa.toFixed(2)} &nbsp;&nbsp; CGPA: ${cumulativeGPA.toFixed(2)}`;
+    const sgpaFixed = sgpa.toFixed(2);
+    const cumulativeGPAFixed = Math.min(cumulativeGPA, 4).toFixed(2);
+
+    document.getElementById('result').innerHTML = `SGPA: ${sgpaFixed} &nbsp;&nbsp; CGPA: ${cumulativeGPAFixed}`;
 }

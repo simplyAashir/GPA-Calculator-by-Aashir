@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    background: #95b6db;
+    background: #09c758;
     padding: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
@@ -35,9 +35,8 @@ h1 {
     align-items: center;
     margin-bottom: 15px;
     gap: 10px;
-    width: calc(100% - 13px); /* Adjust the width to ensure consistent padding */
-  height: 80px;
-
+    width: calc(100% - 13px);
+    height: 80px;
 }
 
 .subject label, .previous-info label {
@@ -56,6 +55,12 @@ h1 {
 
 .subject select:focus, .previous-info input:focus {
     border-color: #173d05;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 button {
@@ -100,6 +105,15 @@ button:hover {
 
     .subject select, .previous-info input {
         margin-bottom: 10px;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+    }
+
+    .buttons-container button {
+        width: 100%;
+        margin-top: 15px;
     }
 
     button {
